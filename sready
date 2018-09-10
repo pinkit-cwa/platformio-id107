@@ -1,0 +1,3 @@
+#when already in DFU mode
+./upload_dfu3.py  -f softdevice.hex -d softdevice.dat -a   F0:27:BE:6A:11:79 --legacy
+

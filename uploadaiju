@@ -1,0 +1,4 @@
+#./zipit
+#./upload_blue_legacy.py -f application.hex -d application.dat -a  D8:4D:17:EE:30:5F --legacy
+./upload_blue_legacy.py -f application.hex -d application.dat -a  DA:E2:C9:AB:2F:65 --legacy
+

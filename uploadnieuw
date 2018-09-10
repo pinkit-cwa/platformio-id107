@@ -1,0 +1,6 @@
+#nrfutil settings generate --family NRF51 --application .pioenvs/id107/firmware.hex --application-version 2 --bootloader-version 2 --bl-settings-version 1 bootloader_setting.hex
+python merge_hex.py flashnieuw.hex s110_nrf51_8.0.0_softdevice.hex booter.hex
+python merge_hex.py booter.hex .pioenvs/id107/firmware.hex nieuwapp.hex
+openocd -s /usr/share/openocd/scripts -f interface/stlink-v2.cfg -f target/nrf51_stlink.tcl  -c init -c "reset init" -c halt -c "nrf51 mass_erase" -c "flash fillw 0x10001014 0x0003a000 0x01" -c reset -c exit
+openocd -s /usr/share/openocd/scripts -f interface/stlink-v2.cfg -f target/nrf51_stlink.tcl  -c init -c "reset init" -c halt -c "program nieuwapp.hex verify" -c reset -c exit
+

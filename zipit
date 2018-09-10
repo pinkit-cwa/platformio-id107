@@ -1,0 +1,4 @@
+cp .pioenvs/id107/firmware.hex application.hex
+arm-none-eabi-objcopy -I ihex --output-target=binary application.hex appli.bin
+./gen_dat appli.bin application.dat
+zip new_fw107.zip application.hex application.dat

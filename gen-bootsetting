@@ -1,0 +1,1 @@
+nrfutil settings generate --family NRF51 --application .pioenvs/id107/firmware.hex --application-version 2 --bootloader-version 2 --bl-settings-version 1 bootloader_setting.hex

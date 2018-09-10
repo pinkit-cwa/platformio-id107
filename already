@@ -1,0 +1,4 @@
+#when already in DFU mode
+./zipit
+./upload_dfu3.py  -f application.hex -d application.dat -a   F0:27:BE:6A:11:79 --legacy
+

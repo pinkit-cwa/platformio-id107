@@ -1,0 +1,6 @@
+python merge_hex.py  ID107HR_tekka.hex .pioenvs/id107/firmware.hex  output2.hex
+./gen-bootsetting
+python merge_hex.py  bootloader_setting.hex output2.hex output.hex
+openocd -s /usr/share/openocd/scripts -f interface/stlink-v2.cfg -f target/nrf51_stlink.tcl -c init -c "reset init" -c halt -c "nrf51 mass_erase" -c "flash fillw 0x10001014 0x0003a000 0x01"    -c halt -c "flash write_image output.hex" -c "reset halt" -c init -c reset -c exit
+#openocd -s /usr/share/openocd/scripts -f interface/stlink-v2.cfg -f target/nrf51_stlink.tcl -c init -c "reset init" -c halt -c "nrf51 mass_erase" -c "flash write_image output.hex "  -c halt -c "flash fillw 0x10001014 0x0003a000 0x01"  -c "flash fillw 0x10001015 0xffffffff 0x70" -c "reset halt" -c init -c reset -c exit
+

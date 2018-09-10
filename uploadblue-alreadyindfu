@@ -1,0 +1,3 @@
+./zipit
+./upload_dfu.py  -f application.hex -d application.dat -a  DA:E2:C9:AB:2F:65 --legacy
+
