@@ -24,7 +24,7 @@ extern "C" {
 #endif
 char* itoa( int value, char *string, int radix )
 {
-	return ultoa( value, string, radix ) ;
+	return ltoa( value, string, radix ) ;
 }
 
 
